@@ -21,20 +21,13 @@ public class ResultGetterTest
     }
     
     [Test]
-    [TestCase("")]
-    public void PrintResult_3(string symbols)
+    [TestCase("../../../Inputs/Task3Input.txt")]
+    public void PrintResult_3(string path)
     {
-        var santa = new Santa();
-        santa.GetToFirstNegativeFloor(symbols);
-        Console.WriteLine(santa.FirstNegativeOneFloorPosition);
-    }
-    
-    [Test]
-    [TestCase("")]
-    public void PrintResult_4(string symbols)
-    {
+        var fileStream = File.Open(path, FileMode.Open);
+        var text = new StreamReader(fileStream).ReadToEnd();
         var elves = new Elves();
-        var area = elves.GetNecessaryPaperArea(symbols);
-        Console.WriteLine(area);
+        var result = elves.GetNecessaryPaperArea(text);
+        Console.WriteLine(result);
     }
 }

@@ -31,11 +31,13 @@ public class ElvesTest
     }
     
     [Test]
-    [TestCase("Input/Task4Input.txt", 58)]
+    [TestCase("../../../Inputs/Task3InputTestData.txt", 43+58)]
     public void When_GivenPresentListFilePath_Should_CalculatePaperArea(string path, int paperSquare)
     {
+        var fileStream = File.Open(path, FileMode.Open);
+        var text = new StreamReader(fileStream).ReadToEnd();
         var elves = new Elves();
-        var result = elves.GetNecessaryPaperArea(presentList);
+        var result = elves.GetNecessaryPaperArea(text);
         Assert.AreEqual(result, paperSquare);
     }
 }
