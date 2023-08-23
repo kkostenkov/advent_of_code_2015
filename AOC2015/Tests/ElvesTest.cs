@@ -15,7 +15,7 @@ public class ElvesTest
     public void When_GivenPresentDimensions_Should_CalculatePaperArea(int a, int b, int c, int paperSquare)
     {
         var elves = new Elves();
-        var result = elves.GetNecessaryPaperArea(a, b, c);
+        var result = elves.GetPresentPaperArea(a, b, c);
         Assert.AreEqual(result, paperSquare);
     }
 
@@ -26,7 +26,16 @@ public class ElvesTest
     public void When_GivenPresentList_Should_CalculatePaperArea(string presentList, int paperSquare)
     {
         var elves = new Elves();
-        var result = elves.GetNecessaryPaperArea_v2(presentList);
+        var result = elves.GetNecessaryPaperArea(presentList);
+        Assert.AreEqual(result, paperSquare);
+    }
+    
+    [Test]
+    [TestCase("Input/Task4Input.txt", 58)]
+    public void When_GivenPresentListFilePath_Should_CalculatePaperArea(string path, int paperSquare)
+    {
+        var elves = new Elves();
+        var result = elves.GetNecessaryPaperArea(presentList);
         Assert.AreEqual(result, paperSquare);
     }
 }
