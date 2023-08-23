@@ -11,18 +11,11 @@ public class ElvesTest
 
     [Test]
     [TestCase(2, 3, 4, 58)]
+    [TestCase(1, 1, 10, 43)]
     public void When_GivenPresentDimensions_Should_CalculatePaperArea(int a, int b, int c, int paperSquare)
     {
         var elves = new Elves();
         var result = elves.GetNecessaryPaperArea(a, b, c);
-        Assert.AreEqual(result, 58);
-    }
-}
-
-public class Elves
-{
-    public int GetNecessaryPaperArea(int a, int b, int c)
-    {
-        throw new NotImplementedException();
+        Assert.AreEqual(result, paperSquare);
     }
 }
