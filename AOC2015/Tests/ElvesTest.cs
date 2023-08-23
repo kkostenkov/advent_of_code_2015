@@ -18,4 +18,13 @@ public class ElvesTest
         var result = elves.GetNecessaryPaperArea(a, b, c);
         Assert.AreEqual(result, paperSquare);
     }
+
+    [Test]
+    [TestCase("2x3x4", 58)]
+    public void When_GivenPresentList_Should_CalculatePaperArea(string presentList, int paperSquare)
+    {
+        var elves = new Elves();
+        var result = elves.GetNecessaryPaperArea(presentList);
+        Assert.AreEqual(result, paperSquare);
+    }
 }
