@@ -2,7 +2,7 @@
 public class Santa
 {
     public int CurrentFloor { get; private set; }
-    public int FirstNegativeOneFloorPosition { get; set; }
+    public int FirstNegativeOneFloorPosition { get; private set; }
 
     public void Follow(string symbols)
     {
@@ -13,6 +13,10 @@ public class Santa
 
     public void GetToFirstNegativeFloor(string symbols)
     {
-        throw new NotImplementedException();
+        var currentPosition = 1;
+        var currentFloor = 0;
+        foreach (var symbol in symbols) {
+            var moveDirection = 0;
+        }
     }
 }

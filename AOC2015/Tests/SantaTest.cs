@@ -24,6 +24,7 @@ public class SantaTest
 
     [Test]
     [TestCase("()())", 5)]
+    [TestCase(")", 1)]
     public void When_GivenFloorSymbols_Should_GetRememberFirstNegativeOneFloor(string symbols, int position)
     {
         var santa = new Santa();
