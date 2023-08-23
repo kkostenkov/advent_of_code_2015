@@ -15,7 +15,7 @@ public class SantaTest
     [TestCase("))(", -1)]
     [TestCase(")))", -3)]
     [TestCase(")())())", -3)]
-    public void When_GivenFloorsSymbols_Should_Calculate(string symbols, int correctFloor)
+    public void When_GivenFloorsSymbols_Should_CalculateFloor(string symbols, int correctFloor)
     {
         var santa = new Santa();
         santa.Follow(symbols);
@@ -31,14 +31,4 @@ public class SantaTest
         santa.GetToFirstNegativeFloor(symbols);
         Assert.AreEqual(santa.FirstNegativeOneFloorPosition, position);
     }
-    
-    // find the position of the first character
-    // that causes him to enter the basement (floor -1).
-    // The first character in the instructions has position 1, the second character has position 2, and so on.
-    //
-    //     For example:
-    //
-    // ) causes him to enter the basement at character position 1.
-    // ()()) causes him to enter the basement at character position 5.
-    // What is the position of the character that causes Santa to first enter the basement?
 }
