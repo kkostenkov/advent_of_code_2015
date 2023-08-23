@@ -17,4 +17,14 @@ public class Elves
         var c = int.Parse(dimensions[2]);
         return GetNecessaryPaperArea(a, b, c);
     }
+
+    public int GetNecessaryPaperArea_v2(string presentList)
+    {
+        var presents = presentList.Split('\n');
+        var presentsArea = 0;
+        foreach (var present in presents) {
+            presentsArea += GetNecessaryPaperArea(present);
+        }
+        return presentsArea;
+    }
 }

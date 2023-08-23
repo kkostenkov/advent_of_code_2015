@@ -26,7 +26,7 @@ public class ElvesTest
     public void When_GivenPresentList_Should_CalculatePaperArea(string presentList, int paperSquare)
     {
         var elves = new Elves();
-        var result = elves.GetNecessaryPaperArea(presentList);
+        var result = elves.GetNecessaryPaperArea_v2(presentList);
         Assert.AreEqual(result, paperSquare);
     }
 }
