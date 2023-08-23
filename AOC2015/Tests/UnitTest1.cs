@@ -12,10 +12,12 @@ public class Tests
     
     // (()) and ()() both result in floor 0.
     [Test]
-    public void Test1()
+    [TestCase("(())", 0)]
+    public void When_GivenFloorsSymbols_Should_Calculate(string symbols, int correctFloor)
     {
-        var a = new Class1();
-        Assert.Pass();
+        var santa = new Santa();
+        santa.Follow(symbols);
+        Assert.AreEqual(santa.CurrentFloor, correctFloor);
     }
     
     // ((( and (()(()( both result in floor 3.
