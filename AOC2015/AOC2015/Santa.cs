@@ -1,11 +1,12 @@
-﻿namespace Tests;
-
+﻿
 public class Santa
 {
-    public int CurrentFloor { get; }
-    
+    public int CurrentFloor { get; private set; }
+
     public void Follow(string symbols)
     {
-        throw new NotImplementedException();
+        var openedBracketsCount = symbols.Count(x => x.Equals('('));
+        var closedBracketsCount = symbols.Count(x => x.Equals(')'));
+        CurrentFloor = openedBracketsCount - closedBracketsCount;   
     }
 }
