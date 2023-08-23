@@ -11,6 +11,10 @@ public class Elves
 
     public int GetNecessaryPaperArea(string presentList)
     {
-        throw new NotImplementedException();
+        var dimensions = presentList.Split('x');
+        var a = int.Parse(dimensions[0]);
+        var b = int.Parse(dimensions[1]);
+        var c = int.Parse(dimensions[2]);
+        return GetNecessaryPaperArea(a, b, c);
     }
 }

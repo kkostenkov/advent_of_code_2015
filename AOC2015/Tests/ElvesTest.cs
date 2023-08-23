@@ -21,6 +21,8 @@ public class ElvesTest
 
     [Test]
     [TestCase("2x3x4", 58)]
+    [TestCase("1x1x10", 43)]
+    [TestCase("2x3x4\n1x1x10", 43+58)]
     public void When_GivenPresentList_Should_CalculatePaperArea(string presentList, int paperSquare)
     {
         var elves = new Elves();
